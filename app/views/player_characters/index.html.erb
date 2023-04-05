@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Player Characters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Main stats</th>
+      <th>Proficiency</th>
+      <th>Saving throws</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @player_characters.each do |player_character| %>
+      <tr>
+        <td><%= player_character.name %></td>
+        <td><%= player_character.main_stats %></td>
+        <td><%= player_character.proficiency %></td>
+        <td><%= player_character.saving_throws %></td>
+        <td><%= link_to 'Show', player_character %></td>
+        <td><%= link_to 'Edit', edit_player_character_path(player_character) %></td>
+        <td><%= link_to 'Destroy', player_character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player Character', new_player_character_path %>
