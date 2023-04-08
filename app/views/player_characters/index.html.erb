@@ -20,9 +20,9 @@
         <td><%= player_character.main_stats %></td>
         <td><%= player_character.proficiency %></td>
         <td><%= player_character.saving_throws %></td>
-        <td><%= link_to 'Show', player_character, class: "btn btn-outline-success" %></td>
-        <td><%= link_to 'Edit', edit_player_character_path(player_character), class: "btn btn-outline-warning" %></td>
-        <td><%= link_to 'Destroy', player_character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
+        <td><%= link_to 'Show PlayChar', player_character, class: "btn btn-outline-success" %></td>
+        <td><%= link_to 'Edit PlayChar', edit_player_character_path(player_character), class: "btn btn-outline-warning" %></td>
+        <td><%= link_to 'Destroy PlayChar', player_character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,19 +31,4 @@
 <br>
 
 <%= link_to 'New Player Character', new_player_character_path, class: "btn btn-dark" %>
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">PlayerChar Name</h5>
-    <p class="card-text">Description.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">main stat</li>
-    <li class="list-group-item">proficiency</li>
-    <li class="list-group-item">saving throw</li>
-  </ul>
-  <div class="card-body">
-  <a href="#" class="btn btn-primary">Show</a>
-  </div>
-</div>
 

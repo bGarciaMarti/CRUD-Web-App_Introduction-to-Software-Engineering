@@ -1,24 +1,29 @@
+<div class="card bg-dark p-2 text-white" style="width: 18rem;">
+  <div class="card-body-dark">
+    <h5 class="card-title">
+      <strong>Name:</strong>
+      <%= @player_character.name %>
+    </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+  <p>
+    <strong>Main stats:</strong>
+    <%= @player_character.main_stats %>
+  </p>
+  <p>
+    <strong>Proficiency:</strong>
+    <%= @player_character.proficiency %>
+  </p>
+  <p>
+    <strong>Saving throws:</strong>
+    <%= @player_character.saving_throws %>
+  </p>
+  </ul>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @player_character.name %>
-</p>
 
-<p>
-  <strong>Main stats:</strong>
-  <%= @player_character.main_stats %>
-</p>
+<%= link_to 'Edit', edit_player_character_path(@player_character), class: "btn btn-dark" %> |
+<%= link_to 'Back', player_characters_path, class: "btn btn-dark" %>
 
-<p>
-  <strong>Proficiency:</strong>
-  <%= @player_character.proficiency %>
-</p>
-
-<p>
-  <strong>Saving throws:</strong>
-  <%= @player_character.saving_throws %>
-</p>
-
-<%= link_to 'Edit', edit_player_character_path(@player_character) %> |
-<%= link_to 'Back', player_characters_path %>
