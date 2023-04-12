@@ -1,5 +1,6 @@
 class PlayerCharactersController < ApplicationController
   before_action :set_player_character, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit create update destroy]
 
   # GET /player_characters or /player_characters.json
   def index

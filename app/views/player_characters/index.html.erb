@@ -21,8 +21,10 @@
         <td><%= player_character.proficiency %></td>
         <td><%= player_character.saving_throws %></td>
         <td><%= link_to 'Show PlayChar', player_character, class: "btn btn-outline-success" %></td>
-        <td><%= link_to 'Edit PlayChar', edit_player_character_path(player_character), class: "btn btn-outline-warning" %></td>
-        <td><%= link_to 'Destroy PlayChar', player_character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit PlayChar', edit_player_character_path(player_character), class: "btn btn-outline-warning" %></td>
+          <td><%= link_to 'Destroy PlayChar', player_character, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
