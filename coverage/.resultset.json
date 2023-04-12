@@ -9,7 +9,7 @@
           null,
           null,
           1,
-          0,
+          2,
           null,
           null,
           null,
@@ -77,6 +77,12 @@
         ]
       },
       "/root/projectCS3300/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/root/projectCS3300/app/models/player_character.rb": {
         "lines": [
           1,
           null
@@ -150,14 +156,6 @@
         "branches": {
         }
       },
-      "/root/projectCS3300/app/models/player_character.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/root/projectCS3300/app/models/user.rb": {
         "lines": [
           0,
@@ -171,6 +169,6 @@
         }
       }
     },
-    "timestamp": 1681315466
+    "timestamp": 1681315853
   }
 }
