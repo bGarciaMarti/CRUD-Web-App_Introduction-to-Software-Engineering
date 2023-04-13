@@ -1,7 +1,6 @@
 require "rails_helper"
 
 context "Login" do
-
     scenario "should sign up" do
       visit root_path
       click_link 'Sign up'
@@ -14,7 +13,6 @@ context "Login" do
       expect(page).to have_content("Welcome! You have signed up successfully.")
     end
 
-
     scenario "should log in" do
       user = FactoryBot.create(:user)
       login_as(user)
@@ -22,3 +20,17 @@ context "Login" do
       expect(page).to have_content("Logged in")
     end
   end
+
+#create new project
+#stub out with before a new user with a factory
+
+#should succede with all attributes
+
+#should fail if no attributes
+
+#updatedat project do
+#let project (project.create. fill in attibutes here)
+#(before each) do 
+#make a user command thing
+
+
