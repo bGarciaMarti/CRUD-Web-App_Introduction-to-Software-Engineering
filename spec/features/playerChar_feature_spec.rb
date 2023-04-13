@@ -20,17 +20,4 @@ context "Login" do
       expect(page).to have_content("Logged in")
     end
   end
-
-#create new project
-#stub out with before a new user with a factory
-
-#should succede with all attributes
-
-#should fail if no attributes
-
-#updatedat project do
-#let project (project.create. fill in attibutes here)
-#(before each) do 
-#make a user command thing
-
-
+end

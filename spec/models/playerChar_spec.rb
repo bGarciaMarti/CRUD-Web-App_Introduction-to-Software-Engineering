@@ -4,6 +4,11 @@ describe "playerChar Attribute Requirements on Create", :type => :model do
   let(:valid_attributes) {
     { :name => "Dora", :main_stats => "17", :proficiency => "3", :saving_throws => "charisma" }
     }
+    before(:each) do
+      user = FactoryBot.create(:user)
+      login_as(user)
+      visit new_project_path
+    end
 
   context "validation tests" do
     it "should be able to save project when it has a name, main_stats, proficiency, and saving_throw" do
