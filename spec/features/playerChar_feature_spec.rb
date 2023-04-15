@@ -26,13 +26,12 @@ context "Update project" do
   let(:valid_attributes) {
   { :name => "Dora", :main_stats => "17", :proficiency => "3", :saving_throws => "charisma" }
   }
-  let(:playerChar) {playerChar.create(valid_attributes)}
-
+  let(:newPlayer) {PlayerCharacter.create(valid_attributes)}
   before(:each) do
     user = FactoryBot.create(:user)
     login_as(user)
     #sign_in user
-    visit root_path
+    visit edit_player_character_path(newPlayer)
   end
   
   scenario "should be successful" do
