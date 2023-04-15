@@ -34,12 +34,67 @@ context "Update project" do
     visit edit_player_character_path(newPlayer)
   end
   
+  # validate updating a name
   scenario "should be successful" do
     within("form") do
-      #sleep 1
       fill_in "Name", with: "Terrabyte"
     end
     click_button "Update Player character"
     expect(page).to have_content("Player character was successfully updated.")
+  end
+  scenario "should fail" do
+    within("form") do
+      fill_in "Name", with: ""
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Name can't be blank")
+  end
+
+  # validate updating a main_stat
+  scenario "should be successful" do
+    within("form") do
+      fill_in "Main stats", with: "14"
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Player character was successfully updated.")
+  end
+  scenario "should fail" do
+    within("form") do
+      fill_in "Main stats", with: ""
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Main stats can't be blank")
+  end
+
+  # validate updating a Proficiency
+  scenario "should be successful" do
+    within("form") do
+      fill_in "Proficiency", with: "4"
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Player character was successfully updated.")
+  end
+  scenario "should fail" do
+    within("form") do
+      fill_in "Proficiency", with: ""
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Proficiency can't be blank")
+  end
+
+  # validate updating a Saving throws
+  scenario "should be successful" do
+    within("form") do
+      fill_in "Saving throws", with: "dexterity"
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Player character was successfully updated.")
+  end
+  scenario "should fail" do
+    within("form") do
+      fill_in "Saving throws", with: ""
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Saving throws can't be blank")
   end
 end
