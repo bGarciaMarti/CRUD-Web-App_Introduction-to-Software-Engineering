@@ -21,3 +21,26 @@ context "Login" do
       expect(page).to have_content("Logged in")
     end
 end
+
+context "Update project" do 
+  let(:valid_attributes) {
+  { :name => "Dora", :main_stats => "17", :proficiency => "3", :saving_throws => "charisma" }
+  }
+  let(:playerChar) {playerChar.create(valid_attributes)}
+
+  before(:each) do
+    user = FactoryBot.create(:user)
+    login_as(user)
+    #sign_in user
+    visit root_path
+  end
+  
+  scenario "should be successful" do
+    within("form") do
+      #sleep 1
+      fill_in "Name", with: "Terrabyte"
+    end
+    click_button "Update Player character"
+    expect(page).to have_content("Player character was successfully updated.")
+  end
+end
