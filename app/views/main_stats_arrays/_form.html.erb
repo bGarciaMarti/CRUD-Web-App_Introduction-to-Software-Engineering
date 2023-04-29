@@ -1,0 +1,47 @@
+<%= form_with(model: main_stats_array) do |form| %>
+  <% if main_stats_array.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(main_stats_array.errors.count, "error") %> prohibited this main_stats_array from being saved:</h2>
+
+      <ul>
+        <% main_stats_array.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :strength %>
+    <%= form.number_field :strength %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dexterity %>
+    <%= form.number_field :dexterity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :constitution %>
+    <%= form.number_field :constitution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intelligence %>
+    <%= form.number_field :intelligence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wisdom %>
+    <%= form.number_field :wisdom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :charisma %>
+    <%= form.number_field :charisma %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

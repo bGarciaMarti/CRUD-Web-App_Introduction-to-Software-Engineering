@@ -3,4 +3,5 @@ class PlayerCharacter < ApplicationRecord
     validates :main_stats, presence: true
     validates :proficiency, presence: true
     validates :saving_throws, presence: true
+
 end

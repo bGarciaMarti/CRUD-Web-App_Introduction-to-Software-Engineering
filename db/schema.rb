@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_12_040200) do
+ActiveRecord::Schema.define(version: 2023_04_29_012314) do
+
+  create_table "main_stats_arrays", force: :cascade do |t|
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "player_characters", force: :cascade do |t|
     t.string "name"
@@ -19,13 +30,8 @@ ActiveRecord::Schema.define(version: 2023_04_12_040200) do
     t.string "saving_throws"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "playerChar_id"
+    t.index ["playerChar_id"], name: "index_player_characters_on_playerChar_id"
   end
 
   create_table "users", force: :cascade do |t|
